@@ -1,4 +1,4 @@
-var socket = io()
+const socket = io()
 
 socket.on('connect', () => {
   console.log('Connected to server')
@@ -10,7 +10,7 @@ socket.on('disconnect', () => {
 
 socket.on('newMessage', (message) => {
   console.log('newMessage', message)
-  var li = jQuery('<li></li>')
+  const li = jQuery('<li></li>')
   li.text(`${message.from}: ${message.text}`)
 
   jQuery('#messages').append(li)
